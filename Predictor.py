@@ -68,8 +68,8 @@ with st.sidebar:
     .stMetric label {{
         font-size: {font_size}px !important;
     }}
-  /* 更精确的选择器，直接作用于显示数值的 <p> 标签 */
-    div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div p {{
+    /* 指标卡片 - 数值字体（增大并加粗） */
+    .stMetric .stMetricValue, .stMetric value {{
         font-size: {font_size + 6}px !important;
         font-weight: bold !important;
     }}
