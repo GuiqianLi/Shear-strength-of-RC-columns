@@ -62,9 +62,14 @@ with st.sidebar:
     .stButton button, .stDownloadButton button {{
         font-size: {font_size}px !important;
     }}
-    /* 指标卡片 */
-    .stMetric label, .stMetric value {{
+    /* 指标卡片 - 标签字体 */
+    .stMetric label {{
         font-size: {font_size}px !important;
+    }}
+    /* 指标卡片 - 数值字体（增大并加粗） */
+    .stMetric .stMetricValue, .stMetric value {{
+        font-size: {font_size + 6}px !important;
+        font-weight: bold !important;
     }}
     /* 警告、成功、错误框内文字 */
     .stAlert div, .stAlert p {{
@@ -226,4 +231,3 @@ if predict_btn:
                 {"parameters": "Vp (kN)", "range": f"{PARAM_RANGES['Vp']['min']} – {PARAM_RANGES['Vp']['max']}"}
             ])
             st.table(range_df)
-
