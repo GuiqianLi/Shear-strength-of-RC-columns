@@ -37,60 +37,60 @@ with st.sidebar:
         help="Adjust the font size of the main content (including labels, descriptions, and results)"
     )
     
-    # 全面控制字体大小的CSS（覆盖所有文本元素，使用稳定选择器）
-st.markdown(f"""
-<style>
-/* 主容器基础字体 */
-.main, .stApp, .stMarkdown, .stAlert, .stException {{
-    font-size: {font_size}px !important;
-}}
-/* 标题字体 */
-h1 {{
-    font-size: {font_size + 8}px !important;
-}}
-h2, h3, .stMarkdown h2, .stMarkdown h3 {{
-    font-size: {font_size + 4}px !important;
-}}
-/* 普通段落、列表、说明文字 */
-p, li, .stMarkdown p, .stMarkdown li, .stMarkdown div, .stMarkdown span {{
-    font-size: {font_size}px !important;
-}}
-/* 输入框标签（包括帮助文本） */
-.stNumberInput label, .stTextInput label, .stSelectbox label, .stSlider label {{
-    font-size: {font_size}px !important;
-    font-weight: 500 !important;
-}}
-/* 按钮文字 */
-.stButton button, .stDownloadButton button {{
-    font-size: {font_size}px !important;
-}}
-/* 指标卡片 - 标签字体 */
-.stMetric label {{
-    font-size: {font_size}px !important;
-}}
-/* 指标卡片 - 数值字体（增大并加粗）- 使用 data-testid 稳定选择器 */
-div[data-testid="metric-container"] p {{
-    font-size: {font_size + 6}px !important;
-    font-weight: bold !important;
-}}
-/* 警告、成功、错误框内文字 */
-.stAlert div, .stAlert p {{
-    font-size: {font_size}px !important;
-}}
-/* 侧边栏文字（独立控制，稍小一点更协调） */
-.css-1d391kg, .sidebar .stMarkdown, .sidebar .stCaption {{
-    font-size: {font_size - 1}px !important;
-}}
-/* 扩展器标题和内容 */
-.streamlit-expanderHeader, .streamlit-expanderContent {{
-    font-size: {font_size}px !important;
-}}
-/* 数据表格内文字 */
-.dataframe, .stTable td, .stTable th {{
-    font-size: {font_size - 1}px !important;
-}}
-</style>
-""", unsafe_allow_html=True)
+    # 全面控制字体大小的CSS（覆盖所有文本元素）
+    st.markdown(f"""
+    <style>
+    /* 主容器基础字体 */
+    .main, .stApp, .stMarkdown, .stAlert, .stException {{
+        font-size: {font_size}px !important;
+    }}
+    /* 标题字体 */
+    h1 {{
+        font-size: {font_size + 8}px !important;
+    }}
+    h2, h3, .stMarkdown h2, .stMarkdown h3 {{
+        font-size: {font_size + 4}px !important;
+    }}
+    /* 普通段落、列表、说明文字 */
+    p, li, .stMarkdown p, .stMarkdown li, .stMarkdown div, .stMarkdown span {{
+        font-size: {font_size}px !important;
+    }}
+    /* 输入框标签（包括帮助文本） */
+    .stNumberInput label, .stTextInput label, .stSelectbox label, .stSlider label {{
+        font-size: {font_size}px !important;
+        font-weight: 500 !important;
+    }}
+    /* 按钮文字 */
+    .stButton button, .stDownloadButton button {{
+        font-size: {font_size}px !important;
+    }}
+    /* 指标卡片 - 标签字体 */
+    .stMetric label {{
+        font-size: {font_size}px !important;
+    }}
+    /* 指标卡片 - 数值字体（增大并加粗） */
+    .stMetric .stMetricValue, .stMetric value {{
+        font-size: {font_size + 6}px !important;
+        font-weight: bold !important;
+    }}
+    /* 警告、成功、错误框内文字 */
+    .stAlert div, .stAlert p {{
+        font-size: {font_size}px !important;
+    }}
+    /* 侧边栏文字（独立控制，稍小一点更协调） */
+    .css-1d391kg, .sidebar .stMarkdown, .sidebar .stCaption {{
+        font-size: {font_size - 1}px !important;
+    }}
+    /* 扩展器标题和内容 */
+    .streamlit-expanderHeader, .streamlit-expanderContent {{
+        font-size: {font_size}px !important;
+    }}
+    /* 数据表格内文字 */
+    .dataframe, .stTable td, .stTable th {{
+        font-size: {font_size - 1}px !important;
+    }}
+    </style>
+    """, unsafe_allow_html=True)
 
 # 检查 xgboost 是否可用
 try:
